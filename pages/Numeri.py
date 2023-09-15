@@ -32,7 +32,7 @@ def display_exercise(df: pd.DataFrame):
 
     st.markdown(f"## {numero}")
     st.text_input(
-        label=int(numero),
+        label=str(numero),
         key="user_answer",
         placeholder="Scrittura",
         on_change=check_answer(),
