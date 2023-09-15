@@ -60,11 +60,13 @@ def display_exercise(df: pd.DataFrame):
     verb = exercise["Verbo"].to_numpy()[0]
     st.session_state.correct_answer = exercise[st.session_state.pronome].to_numpy()[0]
 
+    st.markdown(f"## {verb.title()}")
     st.text_input(
-        label=f"**{verb.title()}**",
+        label=verb.title(),
         key="user_answer",
         placeholder=st.session_state.pronome,
         on_change=check_answer(),
+        label_visibility="collapsed",
     )
 
     return st.session_state.correct_answer
